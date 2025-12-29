@@ -164,15 +164,24 @@ public partial class Agent : CharacterBody3D
         if (distance < 0.0001f)
             return Vector3.Zero;
 
-        float targetSpeed = MaxSpeed;
+        // Compute stopping distance based on current speed and maximum deceleration (MaxForce)
+        float speed = _velocity.Length();
+        float decel = (float)Math.Max(MaxForce, 0.0001);
+        float stoppingDistance = (speed * speed) / (2.0f * decel);
 
+        // If we're within stopping distance, request full braking (desired velocity = 0)
+        if (distance <= stoppingDistance)
+        {
+            return -_velocity; // steer to cancel current velocity
+        }
+
+        float targetSpeed = MaxSpeed;
         if (distance < slowingRadius)
         {
             targetSpeed = MaxSpeed * (distance / slowingRadius);
         }
 
         Vector3 desiredVelocity = toTarget.Normalized() * targetSpeed;
-
         return desiredVelocity - _velocity;
     }
 
