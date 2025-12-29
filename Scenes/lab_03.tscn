@@ -1,0 +1,223 @@
+[gd_scene load_steps=9 format=3 uid="uid://blof225bwvn6k"]
+
+[ext_resource type="PackedScene" uid="uid://wxb4ed3c8ssc" path="res://Scenes/agent.tscn" id="1_v0364"]
+[ext_resource type="Script" uid="uid://b2k5qh7hsiwkm" path="res://Scripts/Target.cs" id="2_2bdql"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v0364"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_2bdql"]
+sky_material = SubResource("ProceduralSkyMaterial_v0364")
+
+[sub_resource type="Environment" id="Environment_27wvs"]
+background_mode = 2
+sky = SubResource("Sky_2bdql")
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_27wvs"]
+vertices = PackedVector3Array(-20, 2.5, -18.75, -17.75, 2.5, -19, -17.75, 2.5, -21, -22, 2.5, -21, -22, 2.5, 15.75, -20, 2.5, 15.75, 17.75, 2.5, -19, 17.75, 2.5, -21, 20, 2.5, 17.75, 17.75, 2.5, 18, 17.75, 2.5, 20, 22, 2.5, 20, 20, 2.5, -18.75, 22, 2.5, -21, -8, 0.5, -8.75, -6.25, 0.5, -9, -6.5, 0.5, -17.75, -18.75, 0.5, -5.25, -8, 0.5, -5.5, -18.75, 0.5, -17.75, 6, 0.5, -10.75, 7.75, 0.5, -11, 7.5, 0.5, -17.75, -3, 0.5, -9, -2.75, 0.5, -7.25, 6, 0.5, -7.5, 11, 0.5, -11, 11.25, 0.5, -9.25, 19, 0.5, -9.5, 19, 0.5, -17.75, 7, 2.5, -10, 7, 2.5, -4, 10, 2.5, -4, 10, 2.5, -10, 11.25, 0.5, -4.75, 19, 0.5, -4.5, -7, 2.5, -8, -7, 2.5, -5, -4, 2.5, -5, -4, 2.5, -8, 7, 0.5, 1, 7.25, 0.5, -2.75, 6, 0.5, -3, 3.5, 0.5, 1, -2.75, 0.5, -4.5, -18.75, 0.5, 6.5, -10, 0.5, 6.75, -9.75, 0.5, 5, -6.5, 0.5, 5, -6.25, 0.5, -3.75, -8, 0.5, -4, 8.25, 0.5, 1.25, 10.75, 0.5, -2.75, 11.25, 0.5, -3.25, 8.25, 0.5, 4.25, 19, 0.5, 4.5, 1, 0.5, 5, 1.25, 0.5, 5.75, 3, 0.5, 5.5, 3, 0.5, 1.25, -3.25, 0.5, -3.75, 4, 2.5, 2, 4, 2.5, 5, 7, 2.5, 5, 7, 2.5, 2, 8.25, 0.5, 5.75, 7.75, 0.5, 6.25, 6.25, 0.5, 6.25, 6.5, 0.5, 17, 19, 0.5, 17, 3.25, 0.5, 6.25, 1.25, 0.5, 9.75, 0.75, 0.5, 10.25, -0.75, 0.5, 10.25, -0.5, 0.5, 17, -9, 2.5, 6, -9, 2.5, 9, 0, 2.5, 9, 0, 2.5, 6, -8.5, 0.5, 17, -8.25, 0.5, 10.25, -10, 0.5, 10, -18.75, 0.5, 17, -19.75, 2.5, 18, -22, 2.5, 20)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(2, 7, 1), PackedInt32Array(1, 7, 6), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(12, 13, 8), PackedInt32Array(8, 13, 11), PackedInt32Array(6, 7, 12), PackedInt32Array(12, 7, 13), PackedInt32Array(16, 15, 14), PackedInt32Array(14, 18, 17), PackedInt32Array(16, 14, 19), PackedInt32Array(19, 14, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 20), PackedInt32Array(15, 16, 23), PackedInt32Array(23, 16, 20), PackedInt32Array(20, 16, 22), PackedInt32Array(26, 21, 22), PackedInt32Array(28, 27, 26), PackedInt32Array(28, 26, 29), PackedInt32Array(29, 26, 22), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(27, 28, 34), PackedInt32Array(34, 28, 35), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 43), PackedInt32Array(42, 43, 25), PackedInt32Array(25, 43, 44), PackedInt32Array(25, 44, 24), PackedInt32Array(47, 46, 45), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 47), PackedInt32Array(50, 47, 18), PackedInt32Array(18, 47, 17), PackedInt32Array(17, 47, 45), PackedInt32Array(40, 41, 51), PackedInt32Array(51, 41, 52), PackedInt32Array(53, 34, 35), PackedInt32Array(52, 53, 51), PackedInt32Array(51, 53, 54), PackedInt32Array(54, 53, 35), PackedInt32Array(54, 35, 55), PackedInt32Array(57, 56, 58), PackedInt32Array(58, 56, 59), PackedInt32Array(49, 60, 48), PackedInt32Array(48, 60, 56), PackedInt32Array(56, 60, 59), PackedInt32Array(59, 60, 43), PackedInt32Array(43, 60, 44), PackedInt32Array(64, 63, 61), PackedInt32Array(61, 63, 62), PackedInt32Array(65, 54, 55), PackedInt32Array(68, 67, 66), PackedInt32Array(65, 55, 66), PackedInt32Array(66, 55, 69), PackedInt32Array(66, 69, 68), PackedInt32Array(58, 70, 57), PackedInt32Array(57, 70, 71), PackedInt32Array(74, 73, 72), PackedInt32Array(67, 71, 70), PackedInt32Array(71, 67, 72), PackedInt32Array(72, 67, 74), PackedInt32Array(74, 67, 68), PackedInt32Array(78, 77, 75), PackedInt32Array(75, 77, 76), PackedInt32Array(81, 80, 79), PackedInt32Array(45, 46, 81), PackedInt32Array(79, 82, 81), PackedInt32Array(81, 82, 45), PackedInt32Array(80, 73, 79), PackedInt32Array(79, 73, 74), PackedInt32Array(5, 83, 4), PackedInt32Array(4, 83, 84), PackedInt32Array(9, 10, 83), PackedInt32Array(83, 10, 84)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0364"]
+albedo_color = Color(0.117109306, 0.11710932, 0.117109306, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_v0364"]
+
+[node name="Lab03" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_27wvs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.83651626, -0.2888487, 0.46562535, 0.22414388, 0.59503484, 0.77181154, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_27wvs")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D"]
+material_override = SubResource("StandardMaterial3D_v0364")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(40, 1, 40)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1, -7)
+size = Vector3(4, 2, 7)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.5, 1, 7.5)
+size = Vector3(4, 2, 10)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -21, 1, -0.5)
+size = Vector3(42, 2, 3)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21, 1, -0.5)
+size = Vector3(42, 2, 3)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, -20)
+size = Vector3(3, 2, 39)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, 19)
+size = Vector3(3, 2, 39)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 1, -6.5)
+size = Vector3(4, 2, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.5, 1, 3.5)
+size = Vector3(4, 2, 4)
+
+[node name="Agent" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent2" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent3" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent4" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent5" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent6" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent7" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent8" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent9" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent10" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent11" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent12" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, 0)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent13" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, 3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent14" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, -3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent15" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent16" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -3)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent17" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -6)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent18" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -6)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Agent19" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("1_v0364")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1, -6)
+MaxSpeed = 8.0
+MaxForce = 15.0
+Target = NodePath("../Target")
+SlowingRadius = 5.0
+
+[node name="Target" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.225, 1.58, -7)
+mesh = SubResource("SphereMesh_v0364")
+script = ExtResource("2_2bdql")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 21, 19)

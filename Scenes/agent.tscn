@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://wxb4ed3c8ssc"]
+
+[ext_resource type="Script" uid="uid://jgsfq6ybewxj" path="res://Scripts/Agent.cs" id="1_ot7av"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i7oqq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ot7av"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ot7av"]
+
+[node name="Agent" type="CharacterBody3D"]
+script = ExtResource("1_ot7av")
+SlowingRadius = 6.0
+SeparationRadius = 2.0
+SeparationStrength = 15.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+simplify_path = true
+height = 2.0
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_i7oqq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(9.075755e-16, -2.076291e-08, 0.475, -0.475, -2.076291e-08, -7.9200915e-23, 2.076291e-08, -0.475, -2.076291e-08, 0, 0.26740408, -0.27072287)
+mesh = SubResource("CapsuleMesh_ot7av")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ot7av")
+
+[node name="PathTimer" type="Timer" parent="."]
+autostart = true

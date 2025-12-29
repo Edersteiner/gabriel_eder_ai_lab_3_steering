@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gabriel-eder-ai-lab-3-steering", "gabriel-eder-ai-lab-3-steering.csproj", "{B593E40B-86EC-4711-9D9C-9AF772AA25D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B593E40B-86EC-4711-9D9C-9AF772AA25D4}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
